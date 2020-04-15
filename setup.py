@@ -6,7 +6,7 @@ with open('README.md', 'r') as f:
 with open('requirements.txt', 'r') as f:
     requirements = f.readlines()
 
-setup(name='DatasetFileList',
+setup(name='FileListDataset',
       version='0.0.1',
       description='Simple class to make Pytorch dataset object creation easier and more flexible.',
       long_description=long_description,
