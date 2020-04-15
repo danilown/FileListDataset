@@ -12,12 +12,34 @@ You can also find some help/inspiration on the bundled jupyter notebook: `Tutori
 
 ## Prerequisites
 
-What things you need to install the software and how to install them
+What things you need to install the software and how to install them.
 
 ``` python
-pytorch >= 1.2.0
+torch >= 1.2.0
 torchvision >= 0.4.0
 ```
+
+You can install them manually or through the command:
+
+``` bash
+pip install -r requirements.txt
+```
+
+## Instalation
+
+If you want to use this class, you have two options:
+
+A) Simply copy and paste it in your project;
+
+B) Or install it through `pip` following the command bellow:
+
+``` bash
+pip install git+git://github.com/danilown/FileListDataset.git#egg=dataset_filelist
+```
+
+> **Note 1**: As noted by [David Winterbottom](https://codeinthehole.com/tips/using-pip-and-requirementstxt-to-install-from-the-head-of-a-github-branch/), if you freeze the environment to export the dependencies, note that this will add the specific commit to your requirements, so it might be a good idea to delete the commit ID from it.
+> ___
+> **Note 2**: Due to the simplicity of this "package", this installation method was preferred over the more traditional [PyPI](https://pypi.org/).
 
 ## Usage
 
