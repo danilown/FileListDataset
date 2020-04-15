@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 with open('README.md', 'r') as f:
     long_description = f.read()
 
-setup(name='dataset_filelist',
+setup(name='DatasetFileList',
       version='0.0.1',
       description='Simple class to make Pytorch dataset object creation easier and more flexible.',
       long_description=long_description,
