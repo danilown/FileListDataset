@@ -2,6 +2,9 @@ from setuptools import find_packages, setup
 
 with open('README.md', 'r') as f:
     long_description = f.read()
+    
+with open('requirements.txt', 'r') as f:
+    requirements = f.readlines()
 
 setup(name='DatasetFileList',
       version='0.0.1',
@@ -12,7 +15,5 @@ setup(name='DatasetFileList',
       author_email='danilownunes@gmail.com',
       url='https://github.com/danilown/FileListDataset',
       license='BSD-3',
-      install_requires=['torch >= 1.2.0',
-                        'torchvision >= 0.4.0'
-                        ],
+      install_requires=requirements,
       packages=find_packages())

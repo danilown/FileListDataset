@@ -19,7 +19,7 @@ torch >= 1.2.0
 torchvision >= 0.4.0
 ```
 
-You can install them manually or through the command:
+You can install them either manually or through the command:
 
 ``` bash
 pip install -r requirements.txt
@@ -34,7 +34,13 @@ A) Simply copy and paste it in your project;
 B) Or install it through `pip` following the command bellow:
 
 ``` bash
-pip install git+git://github.com/danilown/FileListDataset.git#egg=dataset_filelist
+pip install git+git://github.com/danilown/FileListDataset.git#egg=FileListDataset
+```
+
+Then, using it is as simples as:
+
+```python
+from FileListDataset import FileListDataset
 ```
 
 > **Note 1**: As noted by [David Winterbottom](https://codeinthehole.com/tips/using-pip-and-requirementstxt-to-install-from-the-head-of-a-github-branch/), if you freeze the environment to export the dependencies, note that this will add the specific commit to your requirements, so it might be a good idea to delete the commit ID from it.
@@ -50,7 +56,7 @@ First examples is by passing the list of labels already captured to the Dataset 
 Example 1:
 
 ``` python
-from dataset_filelist import DatasetFileList
+from FileListDataset import FileListDataset
 import glob
 import os
 
@@ -120,7 +126,7 @@ data_labels = [f_name.split(os.sep)[-2] for f_name in data_files]
 #                'class2',
 #                'class2']
 
-dataset = DatasetFileList(data_files=data_files,
+dataset = FileListDataset(data_files=data_files,
                           data_labels=data_labels,
                           transform=transforms.ToTensor())
 
@@ -167,7 +173,7 @@ label: 0
 Example 2:
 
 ``` python
-from dataset_filelist import DatasetFileList
+from FileListDataset import FileListDataset
 import glob
 import os
 
@@ -208,7 +214,7 @@ data_files = glob.glob("examples/data/*/*")
 def getter_image_label(file_name):
     return file_name.split(os.sep)[-2]
 
-dataset = DatasetFileList(data_files=data_files,
+dataset = FileListDataset(data_files=data_files,
                           f_get_label=getter_image_label,
                           transform=transforms.ToTensor())
 

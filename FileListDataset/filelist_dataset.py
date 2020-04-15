@@ -11,7 +11,7 @@ from torch.utils.data import Dataset
 from torchvision.datasets.folder import default_loader
 
 
-class DatasetFileList(Dataset):
+class FileListDataset(Dataset):
 
     def __init__(self, data_files, data_labels=None, f_get_label=None, transform=None, loader=default_loader):
         """Constructor
