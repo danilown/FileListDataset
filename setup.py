@@ -12,7 +12,7 @@ setup(name='dataset_filelist',
       author_email='danilownunes@gmail.com',
       url='https://github.com/danilown/FileListDataset',
       license='BSD-3',
-      install_requires=['pytorch >= 1.2.0',
+      install_requires=['torch >= 1.2.0',
                         'torchvision >= 0.4.0'
                         ],
       packages=find_packages())
