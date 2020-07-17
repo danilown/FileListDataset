@@ -260,4 +260,4 @@ label: 0
 
 ## Support
 
-If you would like to see a new functionality, have a suggestion of how to make the documentation clearer or would to report a problem/bug, you can open an [issue](https://github.com/danilown/FileListDataset/issues/new) here on Github or send me and e-mail danilownunes@gmail.com.
+If you would like to see a new functionality, have a suggestion on how to make the documentation clearer or report a problem, you can open an [issue](https://github.com/danilown/FileListDataset/issues/new) here on Github or send me an e-mail danilownunes@gmail.com.
