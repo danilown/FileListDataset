@@ -13,7 +13,7 @@ from torchvision.datasets.folder import default_loader
 
 class FileListDataset(Dataset):
 
-    def __init__(self, data_files, data_labels=None, f_get_label=None, transform=None, loader=default_loader):
+    def __init__(self, data_files, data_labels=None, f_get_label=None, transform=None, is_classification=True, loader=default_loader):
         """Constructor
         
         Arguments:
@@ -26,6 +26,8 @@ class FileListDataset(Dataset):
             
             transform {torchvision.transforms} -- transformations applied on the dataset. Works the same way as in the ImageFolder, for example. (default: {None})
 
+            is_classification {boolean} -- indicate if the dataset is going to be used for classification (True) or regression (False) tasks (default: {True})
+            
             loader {function} -- function used to load an image from its filepath. Recommended to not change this argument. By default it uses the same loader as the ImageFolder class (default: {default_loader})
         """
         
@@ -44,8 +46,11 @@ class FileListDataset(Dataset):
             self.data_labels = [-1] * len(self.data_files)
             # raise Exception("LabelsNeeded")
         
-        # getting the classes and the mapper (dict mapping class name to an int index)
-        self.classes, self.class_to_idx = self._get_classes()
+        self.is_classification = is_classification
+        
+        if self.is_classification:
+            # getting the classes and the mapper (dict mapping class name to an int index)
+            self.classes, self.class_to_idx = self._get_classes()
 
         # image loader method
         self.loader = loader
@@ -77,7 +82,11 @@ class FileListDataset(Dataset):
         if self.transform is not None:
             sample = self.transform(sample)
 
-        label = self.class_to_idx[self.data_labels[idx]]
+        label = None
+        if self.is_classification:
+            label = self.class_to_idx[self.data_labels[idx]]
+        else: # regression
+            label = self.data_labels[idx]
 
         # print("label", label, self.data_labels[idx])
 
