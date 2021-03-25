@@ -10,9 +10,9 @@ You can also checkout the `docstring` of the class for more details about each p
 
 You can also find some help/inspiration on the bundled jupyter notebook: `Tutorial.ipynb`
 
-## Prerequisites
+## Requirements
 
-What things you need to install the software and how to install them.
+What libraries you need to install and how to install them.
 
 ``` python
 torch >= 1.2.0
@@ -25,7 +25,7 @@ You can install them either manually or through the command:
 pip install -r requirements.txt
 ```
 
-## Instalation
+## Package Installation
 
 If you want to use this class, you have two options:
 
