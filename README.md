@@ -49,7 +49,7 @@ from FileListDataset import FileListDataset
 
 ## Usage
 
-The folowing examples are going to show how you could use this class.
+The following examples are going to show how you could use this class.
 
 First examples is by passing the list of labels already captured to the Dataset object and the second how to use the callback function.
 
